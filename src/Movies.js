@@ -8,25 +8,27 @@ const Movies = () => {
   const { movies, isloading } = useGlobalContext();
 
   if (isloading) {
-    return <div className="loading">Loading....</div>
+    return <div className="loading">Loading....</div>;
   }
 
-  return <section className="movies">
-    {movies.map((movie, index)=> {
-      const {imdbid:id, Poster:poster, Title:title, Year:year} = movie
-      return (
-        <Link to={`/movies/${id}`} key={id} className="movie">
-          <article>
-            <img src={poster} alt={title} />
-            <div className="movie-info"></div>
-            <h4 className="title">{title}</h4>
-            <p>{year}</p>
-          </article>
-        </Link>
-      );
-    })}
-  </section>
-
+  return (
+    <section className="movies">
+      {movies.map((movie, index) => {
+        const { imdbid: id, Poster: poster, Title: title, Year: year } = movie;
+        return (
+          <Link to={`/movies/${id}`} key={id} className="movie">
+            <article>
+              <img src={poster} alt={title} />
+              <div className="movie-info">
+                <h4 className="title">{title}</h4>
+                <p>{year}</p>
+              </div>
+            </article>
+          </Link>
+        );
+      })}
+    </section>
+  );
 };
 
 export default Movies;
