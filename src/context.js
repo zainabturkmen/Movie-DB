@@ -20,7 +20,7 @@ const AppProvider = ({ children }) => {
         setMovie(data.Search)
         setError({show: false, msg:""})
       }else{
-        
+        setError({show: true, msg:""})
       }
 
 
