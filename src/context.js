@@ -14,8 +14,8 @@ const AppProvider = ({ children }) => {
     setLoading(true)
     try {
       const response = await fetch(url);
-      
-      ConstantSourceNode
+      const data = await response.json();
+      console.log(data);
     } catch (error) {
       
     }
