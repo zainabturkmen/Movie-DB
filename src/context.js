@@ -12,6 +12,11 @@ const AppProvider = ({ children }) => {
 
   const fetchMovies = (url) => {
     setLoading(true)
+    try {
+      
+    } catch (error) {
+      
+    }
   }
 
   useEffect(() => {
