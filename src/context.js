@@ -16,6 +16,7 @@ const AppProvider = ({ children }) => {
     try {
       const response = await fetch(url);
       const data = await response.json();
+      if(data.Response === )
     } catch (error) {
       console.log(error);
       
