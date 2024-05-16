@@ -4,6 +4,10 @@ export const API_ENDPOINT = `https://www.omdbapi.com/?apikey=${process.env.REACT
 
 const AppContext = React.createContext();
 
-const AppProvider = ({}) => {
-  
+const AppProvider = ({children}) => {
+  return <AppContext.Provider value="heloo">{children}</AppContext.Provider>
 }
+
+// make sure use
+
+export const useGlobalContext = () => {};
