@@ -18,7 +18,7 @@ const AppProvider = ({ children }) => {
       const data = await response.json();
       if(data.Response === "True"){
         setMovie(data.Search)
-        setError({show:})
+        setError({show: false})
       }
     } catch (error) {
       console.log(error);
