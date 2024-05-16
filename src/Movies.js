@@ -19,6 +19,7 @@ const Movies = () => {
           <article>
             <img src={poster} alt={title} />
             <h4 className="title">{title}</h4>
+            <p>{year}</p>
           </article>
         </Link>
       );
