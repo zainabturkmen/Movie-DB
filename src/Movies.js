@@ -14,11 +14,13 @@ const Movies = () => {
   return <section className="movies">
     {movies.map((movie, index)=> {
       const {imdbid:id, Poster:poster, Title:title, Year:year} = movie
-      return <Link to={`/movies/${id}`} key={id} className="movie">
-        <article>
-          <img src={poster} alt="" />
-        </article>
-      </Link>
+      return (
+        <Link to={`/movies/${id}`} key={id} className="movie">
+          <article>
+            <img src={poster} alt={title} />
+          </article>
+        </Link>
+      );
     })}
   </section>
 
