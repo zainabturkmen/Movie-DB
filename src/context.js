@@ -6,23 +6,23 @@ console.log(API_ENDPOINT);
 const AppContext = React.createContext();
 
 const AppProvider = ({ children }) => {
-  const [loading, setLoading] = useState(true);
+  const [isloading, setIsLoading] = useState(true);
   const [error, setError] = useState({ show: false, msg: "" });
-  const [movie, setMovie] = useState([]);
+  const [movies, setMovies] = useState([]);
   const [query, setQuery] = useState("batman");
 
   const fetchMovies = async (url) => {
-    setLoading(true);
+    setIsLoading(true);
     try {
       const response = await fetch(url);
       const data = await response.json();
       if (data.Response === "True") {
-        setMovie(data.Search);
+        setMovies(data.Search);
         setError({ show: false, msg: "" });
       } else {
         setError({ show: true, msg: data.Error });
       }
-      setLoading(false);
+      setIsLoading(false);
     } catch (error) {
       console.log(error);
     }
@@ -32,7 +32,18 @@ const AppProvider = ({ children }) => {
     fetchMovies(`${API_ENDPOINT}&s={query}`);
   }, [query]);
 
-  return <AppContext.Provider value="heloo">{children}</AppContext.Provider>;
+  return (
+    <AppContext.Provider
+      value={{
+        isloading,
+        error,
+        movies,
+        setMovies,
+      }}
+    >
+      {children}
+    </AppContext.Provider>
+  );
 };
 
 // make sure use
