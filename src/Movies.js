@@ -13,7 +13,8 @@ const Movies = () => {
 
   return <section className="movies">
     {movies.map((movie, index)=> {
-      return <h4></h4>
+      console.log(movie);
+      return <h4>movie</h4>
     })}
   </section>
 
