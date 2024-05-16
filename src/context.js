@@ -9,7 +9,7 @@ const AppProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState({ show: false, msg: "" });
   const [movie, setMovie] = useState([]);
-  const [quer, setQuery] = useState("batman");
+  const [query, setQuery] = useState("batman");
 
   const fetchMovies = async (url) => {
     setLoading(true)
@@ -23,7 +23,7 @@ const AppProvider = ({ children }) => {
   }
 
   useEffect(() => {
-    fetchMovies(`${API_ENDPOINT}`)
+    fetchMovies(`${API_ENDPOINT}&s={query}`);
   }, [])
 
   return <AppContext.Provider value="heloo">{children}</AppContext.Provider>;
