@@ -38,7 +38,7 @@ const AppProvider = ({ children }) => {
         isloading,
         error,
         movies,
-        setMovies,
+        query,
       }}
     >
       {children}
