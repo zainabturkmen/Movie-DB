@@ -8,7 +8,7 @@ const AppProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState({ show: false, msg: "" });
   const [movie, setMovie] = useState([]);
-
+  const [quer, setQuery] = useState("batman")
   return <AppContext.Provider value="heloo">{children}</AppContext.Provider>;
 };
 
