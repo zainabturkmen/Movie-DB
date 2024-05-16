@@ -11,7 +11,12 @@ const Movies = () => {
     return <div className="loading">Loading....</div>
   }
 
-  return <h2>movies component</h2>;
+  return <section className="movies">
+    {movies.map((movie, index)=> {
+      return <h4></h4>
+    })}
+  </section>
+
 };
 
 export default Movies;
