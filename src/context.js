@@ -12,28 +12,25 @@ const AppProvider = ({ children }) => {
   const [query, setQuery] = useState("batman");
 
   const fetchMovies = async (url) => {
-    setLoading(true)
+    setLoading(true);
     try {
       const response = await fetch(url);
       const data = await response.json();
-      if(data.Response === "True"){
-        setMovie(data.Search)
-        setError({show: false, msg:""})
-      }else{
-        setError({show: true, msg:data.Error})
+      if (data.Response === "True") {
+        setMovie(data.Search);
+        setError({ show: false, msg: "" });
+      } else {
+        setError({ show: true, msg: data.Error });
       }
-
-      setLoading(false)
-
+      setLoading(false);
     } catch (error) {
       console.log(error);
-      
     }
-  }
+  };
 
   useEffect(() => {
     fetchMovies(`${API_ENDPOINT}&s={query}`);
-  }, [])
+  }, [query]);
 
   return <AppContext.Provider value="heloo">{children}</AppContext.Provider>;
 };
