@@ -10,8 +10,8 @@ const AppProvider = ({ children }) => {
   const [movie, setMovie] = useState([]);
   const [quer, setQuery] = useState("batman");
 
-  const fetchMovies = () => {
-    
+  const fetchMovies = (url) => {
+
   }
 
   useEffect(() => {
