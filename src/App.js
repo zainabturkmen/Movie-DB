@@ -6,7 +6,7 @@ import Movie from './SingleMovie'
 
 function App() {
   return <Switch>
-    <Route path="/" exact/>
+    <Route path="/" exact></Route>
   </Switch>
 }
 
