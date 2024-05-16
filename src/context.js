@@ -12,7 +12,7 @@ const AppProvider = ({ children }) => {
 
 
   useEffect(() => {
-
+    fetchMovies(`$`)
   }, [])
 
   return <AppContext.Provider value="heloo">{children}</AppContext.Provider>;
