@@ -10,10 +10,12 @@ const AppProvider = ({ children }) => {
   const [movie, setMovie] = useState([]);
   const [quer, setQuery] = useState("batman");
 
-  const fetchMovies = (url) => {
+  const fetchMovies = async (url) => {
     setLoading(true)
     try {
+      const response = await fetch(url);
       
+      ConstantSourceNode
     } catch (error) {
       
     }
