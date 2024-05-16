@@ -10,6 +10,7 @@ function App() {
       <Route path="/" exact>
         <Home />
       </Route>
+      <Route path="/:id" ></Route>
     </Switch>
   );
 }
