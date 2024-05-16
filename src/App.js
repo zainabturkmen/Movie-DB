@@ -5,7 +5,9 @@ import Home from './Home'
 import Movie from './SingleMovie'
 
 function App() {
-  return <Switch></Switch>
+  return <Switch>
+    <Route path="/"/>
+  </Switch>
 }
 
 export default App
