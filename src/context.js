@@ -11,7 +11,7 @@ const AppProvider = ({ children }) => {
   const [quer, setQuery] = useState("batman");
 
   const fetchMovies = (url) => {
-
+    setLoading(true)
   }
 
   useEffect(() => {
