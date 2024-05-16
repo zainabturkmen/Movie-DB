@@ -18,6 +18,7 @@ const Movies = () => {
         <Link to={`/movies/${id}`} key={id} className="movie">
           <article>
             <img src={poster} alt={title} />
+            <h4 className="title">{title}</h4>
           </article>
         </Link>
       );
