@@ -8,17 +8,17 @@ const Movies = () => {
   const { movies, isloading } = useGlobalContext();
 
   if (isloading) {
-    return <div className="loading">Loading....</div>;
+    return <div className="loading"></div>;
   }
 
   return (
     <section className="movies">
-      {movies.map((movie, index) => {
-        const { imdbid: id, Poster: poster, Title: title, Year: year } = movie;
+      {movies.map((movie) => {
+        const { imdbID: id, Poster: poster, Title: title, Year: year } = movie;
         return (
           <Link to={`/movies/${id}`} key={id} className="movie">
             <article>
-              <img src={poster === "N/A"? url:poster} alt={title} />
+              <img src={poster === "N/A" ? url : poster} alt={title} />
               <div className="movie-info">
                 <h4 className="title">{title}</h4>
                 <p>{year}</p>
